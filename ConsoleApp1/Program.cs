@@ -50,14 +50,13 @@ namespace ConsoleApp1
 							  join l in db.Lops on sv.MaLop equals l.MaLop
 							  join k in db.Khoas on l.MaKhoa equals k.MaKhoa
 							  where k.TenKhoa == "Công nghệ số" && DateTime.Now.Year-sv.NgaySinh.Year >=18 && DateTime.Now.Year - sv.NgaySinh.Year <= 20
-							  select new {sv.HoTen,sv.NgaySinh,sv.MaLop};
+							  select sv;
 
 			
 			foreach(var x in locSinhVien)
 			{
-				Console.WriteLine(x.HoTen + "\t" + x.NgaySinh + "\t" + x.MaLop);
+				Console.WriteLine(x.MaSinhVien+"\t"+x.HoTen + "\t" + x.NgaySinh + "\t" + x.MaLop);
 			}
-
 
 		}
 	}
